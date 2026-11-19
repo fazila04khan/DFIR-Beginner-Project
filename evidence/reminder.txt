@@ -1,0 +1,3 @@
+Reminder: Review the system access records.
+Check unusual login activity.
+Prepare findings for the investigation.

@@ -1,0 +1,280 @@
+BASIC DIGITAL FORENSIC EXAMINATION REPORT
+
+1. Examination Purpose
+
+The purpose of this exercise is to demonstrate basic digital forensic examination techniques using Linux command-line tools. The examination focuses on identifying file types, inspecting file contents, recording file metadata, generating SHA-256 hashes, and verifying file integrity.
+
+2. Examination Scope
+
+This is a controlled beginner-level training exercise involving three synthetic sample files created locally for learning purposes.
+
+The examination covers:
+- File type identification
+- File content inspection
+- Evidence inventory
+- File metadata examination
+- SHA-256 hash generation
+- SHA-256 integrity verification
+
+3. Examination Environment
+
+- Operating System: Kali Linux
+- Environment: VirtualBox virtual machine
+- Tools: `file`, `cat`, `ls`, `stat`, `sha256sum`, and `tree`
+
+4. Evidence Description
+
+Three synthetic files were created for this exercise:
+
+1. `employee_list.csv`
+2. `project_notes.txt`
+3. `reminder.txt`
+
+These files are training materials and are not associated with a real person, organisation, or security incident.
+
+5. Examination Methodology
+
+The files were examined using basic Linux commands. Their file types, contents, sizes, permissions, ownership, and timestamps were recorded. SHA-256 hashes were generated and subsequently verified to check whether the files remained consistent with their recorded reference values.
+
+6. Limitations
+
+This exercise does not involve a forensic disk image, deleted-file recovery, network traffic analysis, or investigation of an actual security incident. The findings are limited to the sample files and the examination activities performed. The results should not be interpreted as proof of authenticity or real-world incident activity.
+
+
+
+EXAMINATION ACTIVITY 01
+Title: File Type Identification
+
+Objective:
+To identify the actual file types of the synthetic sample files created for this exercise.
+
+Tool:
+Linux file command.
+
+Evidence examined:
+1. employee_list.csv
+2. project_notes.txt
+3. reminder.txt
+
+Observations:
+
+1. employee_list.csv was identified as CSV ASCII text.
+2. project_notes.txt was identified as ASCII text.
+3. reminder.txt was identified as ASCII text.
+
+Interpretation:
+
+The examination identified three readable text-based files.
+The file identification results were consistent with their respective filename extensions.
+
+Limitation:
+
+File type identification alone does not establish file authenticity, authorship, creation date or modification history.
+
+
+EXAMINATION ACTIVITY 02
+Title: Content Inspection – employee_list.csv
+
+Objective:
+To inspect the readable contents of the CSV sample file.
+
+Tool:
+Linux cat command.
+
+Observations:
+1. The file contains three columns: Name, Department and Role.
+2. The file contains three employee records.
+3. The records include Alex (IT, Analyst), Jordan (Finance, Executive)
+   and Taylor (HR, Manager).
+
+Interpretation:
+The file contains structured employee-related information
+stored in comma-separated value format.
+
+Limitation:
+The contents alone do not establish the authenticity of the
+employee information or identify the file's author.
+
+EXAMINATION ACTIVITY 03
+Title: Content Inspection – project_notes.txt
+
+Objective:
+To inspect the readable contents of the project notes sample file.
+
+Tool:
+Linux cat command.
+
+Observations:
+1. The file contains the heading "Employee Project Notes".
+2. The project is identified as "Internal Documentation".
+3. The recorded status is "Draft".
+4. The file contains the date 18 November 2026.
+
+Interpretation:
+The file appears to contain basic project documentation
+and status information.
+
+Limitation:
+The date displayed in the file is content written within the document. It does not independently establish the file's actual creation or modification timestamp.
+
+
+EXAMINATION ACTIVITY 04
+Title: Content Inspection – reminder.txt
+
+Objective:
+To inspect the readable contents of the reminder sample file.
+
+Tool:
+Linux cat command.
+
+Observations:
+1. The file contains three reminder statements.
+2. It refers to reviewing system access records.
+3. It mentions checking unusual login activity.
+4. It refers to preparing investigation findings.
+
+Interpretation:
+The text appears to contain reminders relating to system access review and investigation preparation.
+
+Limitation:
+The contents do not establish that unusual login activity actually occurred or that any investigation was conducted.
+
+EXAMINATION ACTIVITY 05
+Title: Evidence File Inventory
+
+Objective:
+To identify the files available in the evidence directory and record their file sizes.
+
+Tool:
+Linux ls command.
+
+Evidence Inventory:
+
+1. employee_list.csv – 80 bytes
+2. project_notes.txt – 92 bytes
+3. reminder.txt – 114 bytes
+
+Total number of files: 3
+Total file size: 286 bytes
+
+Observations:
+All three sample files were present in the evidence directory.
+The displayed file ownership was kali, and the files had read and write permissions for their owner and group.
+
+Limitation:
+The displayed filesystem timestamps and ownership information do not independently establish the original creation history or authenticity of the files.
+
+EXAMINATION ACTIVITY 06
+Title: File Metadata Examination
+
+Objective:
+To examine filesystem metadata associated with the
+three sample files.
+
+Tool:
+Linux stat command.
+
+Results:
+
+1. employee_list.csv
+   - Size: 80 bytes
+   - Type: Regular file
+   - Permissions: 0664
+   - Owner: kali
+   - Inode: 3943881
+
+2. project_notes.txt
+   - Size: 92 bytes
+   - Type: Regular file
+   - Permissions: 0664
+   - Owner: kali
+   - Inode: 3943880
+
+3. reminder.txt
+   - Size: 114 bytes
+   - Type: Regular file
+   - Permissions: 0664
+   - Owner: kali
+   - Inode: 3943946
+
+Observations:
+All three files were identified as regular files.
+They shared the same ownership and permission settings.
+Each file had a distinct inode number.
+
+The recorded birth, modification and change timestamps matched for each file.
+
+Limitation:
+Filesystem timestamps and metadata describe the current filesystem records. They do not independently establish the original history or authenticity of the files.
+
+EXAMINATION ACTIVITY 07
+Title: SHA-256 Hash Generation
+
+Objective:
+To generate cryptographic hashes for the three sample files to establish reference values for subsequent integrity verification.
+
+Tool:
+Linux sha256sum command.
+
+Results:
+
+1. employee_list.csv
+   SHA-256: d2febc516ea33269d9b7c504bc132fa2a31f61048c2766596d11de074d1900e3
+
+2. project_notes.txt
+   SHA-256: b137cc94789c4d80dba60129509ec9e330df8e6470e677395f737fa7511df396
+
+3. reminder.txt
+   SHA-256: e1af6303f16d3535e16117e7443f555083fde281260bce65a1ea032fe1499a83
+
+Observations:
+A SHA-256 hash was successfully generated for each of the three sample files. The hash values were saved in hashes/sha256_hashes.txt.
+
+Interpretation:
+The generated hash values provide reference values that can be used to check whether the file contents change during subsequent examination.
+
+Limitation:
+Hash generation alone does not establish the authenticity or provenance of the files.
+
+
+EXAMINATION ACTIVITY 08
+Title: SHA-256 Integrity Verification
+
+Objective:
+To verify whether the current contents of the sample files match their previously recorded SHA-256 hash values.
+
+Tool:
+Linux sha256sum command using the -c option.
+
+Command:
+sha256sum -c hashes/sha256_hashes.txt
+
+Results:
+
+1. employee_list.csv – OK
+2. project_notes.txt – OK
+3. reminder.txt – OK
+
+Observations:
+All three files passed SHA-256 integrity verification.
+Their recalculated hash values matched the previously recorded hash values.
+
+Interpretation:
+The verification results demonstrate that the current contents of all three files were consistent with their recorded reference hashes at the time of verification.
+
+Limitation:
+This verification does not establish whether the files were authentic or unmodified before the initial hashes were generated.
+
+7. Overall Conclusion
+
+The examination successfully demonstrated several fundamental digital forensic techniques using three synthetic sample files in a Kali Linux environment.
+
+The activities included file type identification, content inspection, evidence inventory, filesystem metadata examination, SHA-256 hash generation, and integrity verification.
+
+All three files were successfully identified as readable text-based files. Their contents and filesystem metadata were examined and documented. SHA-256 hashes were generated and stored, and subsequent integrity verification confirmed that all three files matched their recorded reference hash values.
+
+This exercise provided practical experience in using Linux command-line tools to examine files and document findings systematically.
+
+The findings are limited to the synthetic files created for this training exercise. They do not represent an investigation of an actual security incident or establish the authenticity or provenance of any evidence.
+
+
