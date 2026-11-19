@@ -36,35 +36,6 @@ Three synthetic sample files were created specifically for this exercise.
 
 These files do not originate from an actual investigation and contain no real personal data.
 
-## Examination Activities
-
-### 1. File Type Identification
-Used the Linux `file` command to identify the formats of the sample files.
-
-### 2. Content Inspection
-Used the `cat` command to inspect and document the contents of each sample file.
-
-### 3. Evidence Inventory
-Used `ls -lh` to record filenames, file sizes, ownership and permissions.
-
-### 4. SHA-256 Hash Generation
-Generated SHA-256 hashes for all three sample files and saved the results in a hash record.
-
-### 5. Hash Verification
-Used `sha256sum -c` to compare the current file contents against the previously recorded hashes.
-
-All three files returned an `OK` verification result.
-
-### 6. Filesystem Metadata Examination
-Used the Linux `stat` command to examine:
-
-- File sizes and file types
-- File permissions and ownership
-- Inode numbers
-- Access timestamps
-- Modification timestamps
-- Metadata change timestamps
-- Birth timestamps, where available
 
 ## Project Structure
 
@@ -87,28 +58,6 @@ DFIR-Beginner-Project/
 │   └── 06-report-conclusion.png
 └── README.md
 ```
-
-## Screenshots
-
-The following screenshots document the examination process and report preparation.
-
-### 1. File Type Identification
-![File Type Identification](screenshots/01-file-type-identification.png)
-
-### 2. SHA-256 Hash Generation
-![SHA-256 Hash Generation](screenshots/02-sha256-hash-generation.png)
-
-### 3. SHA-256 Integrity Verification
-![SHA-256 Integrity Verification](screenshots/03-sha256-integrity-verification.png)
-
-### 4. Filesystem Metadata Examination
-![Filesystem Metadata Examination](screenshots/04-file-metadata-examination.png)
-
-### 5. Examination Report – Introduction
-![Report Introduction](screenshots/05-report-introduction.png)
-
-### 6. Examination Report – Conclusion
-![Report Conclusion](screenshots/06-report-conclusion.png)
 
 ## Tools and Commands
 
